@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JSON</title>
+</head>
+<body>
+    <script>
+        var sv = {
+        "name": "Nguyễn Văn Tèo",
+        "gener": true,
+        "marks": 7.5,
+        "contact": {
+            "email": "teonv@gmail.com",
+            "phone": "09783723727"
+            },
+        "subject": ["WEB205", "COM108"]
+        }
+        //Xuất đối tượng
+        console.log(sv)
+        //TRUY XUẤT THUỘC TÍNH
+        sv.name = sv['name'].toUpperCase();
+        console.log(sv.name, sv.contact.email, sv.subject[0])
+        // DUYỆT ĐỐI TƯỢNG THEO KEY
+        for(var key in sv) {
+            console.log(key, sv[key])
+        }
+        //CHUYỂN ĐỔI ĐỐI TƯỢNG JSON SANG CHUỖI
+        var text = JSON.stringify(sv)
+        // CHUYỂN ĐỐI CHUỖI SANG ĐỐI TƯỢNG JSON
+        var obj = JSON.parse(text);
+        console.log(obj, obj.name)
+    </script>
+</body>
+</html>
